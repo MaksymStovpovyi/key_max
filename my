@@ -1,0 +1,178 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "complete+ledscroll(group_lock)"	};
+	xkb_geometry  { include "pc(pc105)"	};
+	
+    xkb_symbols   { 
+
+        include "pc+us+ru:2+inet(evdev)"
+
+        name[group1] = "English (US)";
+        name[group2] = "Russian";
+
+        key <CAPS> { [ ISO_Level3_Shift ] };
+
+        key <CAPS> {
+            symbols[group1] = [ ISO_Level3_Shift ],
+            symbols[group2] = [ ISO_Level3_Shift ]
+        };
+
+
+// rAlt eng/rus
+
+        key <RALT> { 
+            [ ISO_Next_Group ]
+        };
+
+        
+        key <RCTL> { 
+            [ Alt_L ]
+        };
+
+
+// ENTER BackSpace
+
+        key <AC07> { 
+            symbols[group1] = [ j, J, Return ],
+            symbols[group2] = [ Cyrillic_o, Cyrillic_O, Return ] 
+        };
+
+        key <AC06> { 
+            symbols[group1] = [ h, H, BackSpace ],
+            symbols[group2] = [ Cyrillic_er, Cyrillic_ER, BackSpace ] 
+        };
+
+
+// up---down---left---right
+
+        key <AB03> { 
+            symbols[group1] = [ c, C, KP_Up ],
+            symbols[group2] = [ Cyrillic_es, Cyrillic_ES, KP_Up ] 
+        };
+
+        key <AB04> { 
+            symbols[group1] = [ v, V, KP_Down ],
+            symbols[group2] = [ Cyrillic_em, Cyrillic_EM, KP_Down ] 
+        };
+
+        key <AB06> { 
+            symbols[group1] = [ n, N, KP_Left ],
+            symbols[group2] = [ Cyrillic_te, Cyrillic_TE, KP_Left ] 
+        };
+
+        key <AB07> { 
+            symbols[group1] = [ m, M, KP_Right ],
+            symbols[group2] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN, KP_Right ] 
+        };
+
+
+//  {} () []
+
+        key <AD07> { 
+            symbols[group1] = [ u, U, braceleft ],
+            symbols[group2] = [ Cyrillic_ghe, Cyrillic_GHE, braceleft ] 
+        };
+
+        key <AD08> { 
+            symbols[group1] = [ i, I, parenleft ],
+            symbols[group2] = [ Cyrillic_sha, Cyrillic_SHA, parenleft ] 
+        };
+
+        key <AD09> { 
+            symbols[group1] = [ o, O, bracketleft ],
+            symbols[group2] = [ Cyrillic_shcha, Cyrillic_SHCHA, bracketleft ] 
+        };
+
+
+// ; : , .
+
+        key <AC08> { 
+            symbols[group1] = [ k, K, semicolon ],
+            symbols[group2] = [ Cyrillic_el, Cyrillic_EL, semicolon ] 
+        };
+
+        key <AC05> { 
+            symbols[group1] = [ g, G, colon ],
+            symbols[group2] = [ Cyrillic_pe, Cyrillic_PE, colon ] 
+        };
+
+        key <AC09> { 
+            symbols[group1] = [ l, L, period ],
+            symbols[group2] = [ Cyrillic_de, Cyrillic_DE, period ] 
+        };
+
+        key <AB08> { 
+            symbols[group1] = [ comma, less, comma ],
+            symbols[group2] = [ Cyrillic_be, Cyrillic_BE, comma ] 
+        };
+
+
+// = + - _ < >
+
+        key <AC04> { 
+            symbols[group1] = [ f, F, equal ],
+            symbols[group2] = [ Cyrillic_a, Cyrillic_A, equal ] 
+        };
+
+        key <AD05> { 
+            symbols[group1] = [ t, T, plus ],
+            symbols[group2] = [ Cyrillic_ie, Cyrillic_IE, plus ] 
+        };
+
+        key <AD04> { 
+            symbols[group1] = [ r, R, minus ],
+            symbols[group2] = [ Cyrillic_ka, Cyrillic_KA, minus ] 
+        };
+
+        key <AE05> { 
+            symbols[group1] = [ 5, percent, underscore ],
+            symbols[group2] = [ 5, percent, underscore ] 
+        };
+
+        key <AB05> { 
+            symbols[group1] = [ b, B, greater ],
+            symbols[group2] = [ Cyrillic_i, Cyrillic_I, greater ] 
+        };
+
+        key <AD06> { 
+            symbols[group1] = [ y, Y, less ],
+            symbols[group2] = [ Cyrillic_en, Cyrillic_EN, less ] 
+        };
+
+
+// "" '' ``
+
+        key <AD03> { 
+            symbols[group1] = [ e, E, quotedbl ],
+            symbols[group2] = [ Cyrillic_u, Cyrillic_U, quotedbl ] 
+        };
+
+        key <AC03> { 
+            symbols[group1] = [ d, D, apostrophe ],
+            symbols[group2] = [ Cyrillic_ve, Cyrillic_VE, apostrophe ] 
+        };
+
+        key <AC02> { 
+            symbols[group1] = [ s, S, grave ],
+            symbols[group2] = [ Cyrillic_yeru, Cyrillic_YERU, grave ] 
+        };
+
+
+// Home End
+
+        key <AD02> { 
+            symbols[group1] = [ w, W, Home ],
+            symbols[group2] = [ Cyrillic_tse, Cyrillic_TSE, Home ] 
+        };
+
+        key <AD10> { 
+            symbols[group1] = [ p, P, End ],
+            symbols[group2] = [ Cyrillic_ze, Cyrillic_ZE, End ] 
+        };
+
+
+    };
+};
+
+// xkbcomp $HOME/.config/xkb/my $DISPLAY 
